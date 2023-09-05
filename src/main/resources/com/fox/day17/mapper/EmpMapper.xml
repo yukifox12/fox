@@ -18,4 +18,7 @@
         from emp e
                  left join dep d on e.dep_id = d.id;
     </select>
+
+
+
 </mapper>
