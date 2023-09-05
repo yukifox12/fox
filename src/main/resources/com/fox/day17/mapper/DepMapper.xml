@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fox.day17.mapper.DepMapper">
+<!--    *
+    * 查询所有部门及部门下的员工
+    * *
+    <resultMap id="dep_mep" type="com.fox.day17.bean.Dep">
+        <id property="id" column="depId"/>
+        <result property="name" column="depName"/>
+        <collection property="empList" ofType="com.fox.day17.bean.Emp">
+            <id property="id" column="empId"/>
+            <result property="name" column="empName"/>
+            <result property="salary" column="salary"/>
+        </collection>
+    </resultMap>
+    <select id="getAll" resultMap="dep_mep">
+        select d.id depId, d.name depName, e.id empId, e.name empName, salary
+        from dep d
+                 left join emp e on d.id = e.dep_id
+    </select>
+   -->
+
+</mapper>

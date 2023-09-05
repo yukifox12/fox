@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fox.day17.mapper.EmpMapper">
+
+<resultMap id="emp_dep" type="com.fox.day17.bean.Emp" >
+    <id property="id" column="empId"/>
+    <result property="name" column="empName" />
+    <result property="salary" column="salary" />
+    <association property="dep" javaType="com.fox.day17.bean.Dep">
+        <id property="id" column="depId" />
+        <result property="name" column="depName" />
+    </association>
+</resultMap>
+    <select id="getAll" resultMap="emp_dep">
+        select e.id empId, e.name empName, salary, d.id depId, d.name depName
+        from emp e
+                 left join dep d on e.dep_id = d.id;
+    </select>
+</mapper>
